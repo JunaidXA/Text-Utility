@@ -34,6 +34,13 @@ const TextUtility: React.FC = () => {
     setText(text.toUpperCase());
   };
 
+  const copyToClipboard = () => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => alert("Text copied to clipboard!"))
+      .catch((err) => console.error("Failed to copy text: ", err));
+  };
+
   return (
     <div className="p-4 max-w-full">
       <textarea
@@ -61,6 +68,11 @@ const TextUtility: React.FC = () => {
           className="bg-red-500"
           title="Uppercase"
           onClick={toUpperCase}
+        />
+        <Buttons
+          className="bg-gray-500"
+          title="Uppercase"
+          onClick={copyToClipboard}
         />
       </div>
     </div>
