@@ -71,7 +71,7 @@ const TextUtility: React.FC = () => {
         />
         <Buttons
           className="bg-gray-500"
-          title="Uppercase"
+          title="Copy"
           onClick={copyToClipboard}
         />
       </div>
